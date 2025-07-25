@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinanPlan – Controle Financeiro com Clareza</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<script>
+    function scrollCarousel(direction) {
+      const track = document.getElementById('carouselTrack');
+      const scrollAmount = 320; // pixel a cada clique
+      track.scrollBy({
+        left: scrollAmount * direction,
+        behavior: 'smooth'
+      });
+    }
+</script>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" />
+</div>
+
+<body>
+  <div class="bg">
+    <!-- LOGO -->
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Logo_Plain.svg" alt="Logo" class="logo" /> -->
+    <img src="imagens/logo-borda-1.png" alt="Logo GranaSimples" class="logo" />
+
+    <!-- TÍTULO -->
+    <!--<h1>FinanPlan</h1>-->
+
+    <!-- SUBTÍTULO -->
+    <h2>Seu planejamento financeiro começa com simplicidade</h2>
+
+    <!-- BOTÃO -->
+    <a href="download.html" class="botao">Acessar Planilha Gratuita</a>
+
+    <!-- PRÉ-VISUALIZAÇÕES -->
+    <div class="carousel-section">
+        <h3>Pré-visualização da planilha:</h3>
+        <div class="carousel">
+          <button class="carousel-btn left" onclick="scrollCarousel(-1)">❮</button>
+          
+          <div class="carousel-track" id="carouselTrack">
+            <img src="imagens/finanplan_painel.png" alt="Prévia 1" />
+            <img src="imagens/finanplan_receita.png" alt="Prévia 2" />
+            <img src="imagens/finanplan_despesa.png" alt="Prévia 3" />
+            <img src="imagens/finanplan_caixa.png" alt="Prévia 3" />
+            <img src="imagens/finanplan_info.png" alt="Prévia 3" />
+          </div>
+          
+          <button class="carousel-btn right" onclick="scrollCarousel(1)">❯</button>
+        </div>
+      </div>    
+  
+  </div>
+
+  <script>
+    function openLightbox(imgSrc) {
+      document.getElementById("lightbox-img").src = imgSrc;
+      document.getElementById("lightbox").style.display = "block";
+    }
+  
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  
+    // Vincula o clique a todas imagens do carrossel
+    window.onload = function () {
+      const imgs = document.querySelectorAll(".carousel-track img");
+      imgs.forEach(img => {
+        img.addEventListener("click", () => openLightbox(img.src));
+      });
+    };
+  </script>
+  
+</body>
+</html>
