@@ -10,8 +10,9 @@
   }
   
   .bg {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    /*background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
     url('imagens/fundo02.jpg') center/cover no-repeat;
+    background-attachment: fixed; /* <- isso faz o fundo ficar estático */
     height: 100%;
     display: flex;
     justify-content: center;
@@ -25,6 +26,7 @@
   .logo {
     max-width: 320px;
     margin-bottom: 20px;
+    margin-top: 40px;
   }
   
   h1 {
@@ -186,6 +188,9 @@ footer a:hover {
 
 /* Estilo moderna das paginas, sobre, politica, contato */
 body {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+  url('imagens/fundo-otimizado.jpg') center/cover no-repeat;
+  background-attachment: fixed; /* <- isso faz o fundo ficar estático */
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9f9f9;
   color: #333;
