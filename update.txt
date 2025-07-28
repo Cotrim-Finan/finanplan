@@ -8,3 +8,8 @@ Para remover um arquivo antigo utilize:
 git rm nome-do-arquivo
 git commit -m "removendo arquivo antigo"
 git push
+
+
+Atualizar repositorio para o novo nome
+git remote -v
+git remote set-url origin https://github.com/usuario-novo/repositorio.git
